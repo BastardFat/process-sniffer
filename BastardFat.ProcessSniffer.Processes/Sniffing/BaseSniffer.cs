@@ -26,9 +26,7 @@ namespace BastardFat.ProcessSniffer.Processes.Sniffing
             try
             {
                 using (var safeDesktopHandle = new User32.SafeDesktopHandle())
-                {
                     User32.EnumDesktopWindows(safeDesktopHandle, WNDENUMPROC, default(IntPtr));
-                }
             }
             finally
             {
