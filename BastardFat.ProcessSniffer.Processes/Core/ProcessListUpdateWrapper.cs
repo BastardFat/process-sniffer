@@ -7,7 +7,7 @@ using System.Timers;
 
 namespace BastardFat.ProcessSniffer.Processes.Core
 {
-    class ProcessListUpdateWrapper
+    public class ProcessListUpdateWrapper
     {
         private ProcessListUpdateWrapper()
         {

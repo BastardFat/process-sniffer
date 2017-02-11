@@ -8,19 +8,21 @@ using System.Threading.Tasks;
 
 namespace BastardFat.ProcessSniffer.Processes.Core.Tests
 {
-    [TestClass()]
+    [TestClass]
     public class ProcessListTests
     {
-        [TestMethod()]
+        [TestMethod]
         public void ProcessListTest()
         {
-            Assert.Fail();
+            ProcessList pl = new ProcessList();
         }
 
-        [TestMethod()]
+        [TestMethod]
         public void UpdateProcessListTest()
         {
-            Assert.Fail();
+            ProcessList pl = new ProcessList();
+            pl.UpdateProcessList();
+            pl.ActualProcessList.ForEach(p => Console.WriteLine(p.ToString()));
         }
     }
 }

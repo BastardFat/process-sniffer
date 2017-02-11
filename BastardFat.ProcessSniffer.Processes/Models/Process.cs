@@ -24,10 +24,7 @@ namespace BastardFat.ProcessSniffer.Processes.Models
             System.Diagnostics.Process.GetProcessById(Pid);
 
 
-        public override string ToString()
-        {
-            return Name;
-        }
+        public override string ToString() => $"{Name} ({Pid}) - {Title}";
 
     }
 }
