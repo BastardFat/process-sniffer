@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace BastardFat.ProcessSniffer.DataModels
 {
-    class Process
+    public class Process
     {
+
     }
 }
