@@ -7,36 +7,135 @@
     @Styles.Render("~/Content/css")
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+    <div class="app-bar fixed-top darcula" data-role="appbar">
+        <a class="app-bar-element branding">BrandName</a>
+        <span class="app-bar-divider"></span>
+        <ul class="app-bar-menu">
+            <li><a href="">Dashboard</a></li>
+            <li>
+                <a href="" class="dropdown-toggle">Project</a>
+                <ul class="d-menu" data-role="dropdown">
+                    <li><a href="">New project</a></li>
+                    <li class="divider"></li>
+                    <li>
+                        <a href="" class="dropdown-toggle">Reopen</a>
+                        <ul class="d-menu" data-role="dropdown">
+                            <li><a href="">Project 1</a></li>
+                            <li><a href="">Project 2</a></li>
+                            <li><a href="">Project 3</a></li>
+                            <li class="divider"></li>
+                            <li><a href="">Clear list</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="">Security</a></li>
+            <li><a href="">System</a></li>
+            <li>
+                <a href="" class="dropdown-toggle">Help</a>
+                <ul class="d-menu" data-role="dropdown">
+                    <li><a href="">ChatOn</a></li>
+                    <li><a href="">Community support</a></li>
+                    <li class="divider"></li>
+                    <li><a href="">About</a></li>
+                </ul>
+            </li>
+        </ul>
+
+        <div class="app-bar-element place-right">
+            <span class="dropdown-toggle"><span class="mif-cog"></span> User Name</span>
+            <div class="app-bar-drop-container padding10 place-right no-margin-top block-shadow fg-dark" data-role="dropdown" data-no-close="true" style="width: 220px">
+                <h2 class="text-light">Quick settings</h2>
+                <ul class="unstyled-list fg-dark">
+                    <li><a href="" class="fg-white1 fg-hover-yellow">Profile</a></li>
+                    <li><a href="" class="fg-white2 fg-hover-yellow">Security</a></li>
+                    <li><a href="" class="fg-white3 fg-hover-yellow">Exit</a></li>
                 </ul>
             </div>
         </div>
     </div>
 
+    <style>
+        .left-pinned {
+            width: 20%;
+            height: 100%;
+            position: fixed;
+        }
+
+        .right-scroll {
+            width: 80%;
+            height: auto;
+            position: absolute;
+            right: 0;
+            padding: 10px;
+        }
+    </style>
+
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/metro")
     @RenderSection("scripts", required: false)
 
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
+    <div class="page-content">
+        <div class="left-pinned" id="cell-sidebar" style="background-color: #71b1d1; height: 100%">
+            <ul class="sidebar">
+                <li>
+                    <a href="#">
+                        <span class="mif-apps icon"></span>
+                        <span class="title">all items</span>
+                        <span class="counter">0</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="mif-vpn-publ icon"></span>
+                        <span class="title">websites</span>
+                        <span class="counter">0</span>
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="#">
+                        <span class="mif-drive-eta icon"></span>
+                        <span class="title">Virtual machines</span>
+                        <span class="counter">2</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="mif-cloud icon"></span>
+                        <span class="title">Cloud services</span>
+                        <span class="counter">0</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="mif-database icon"></span>
+                        <span class="title">SQL Databases</span>
+                        <span class="counter">0</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="mif-cogs icon"></span>
+                        <span class="title">Automation</span>
+                        <span class="counter">0</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="mif-apps icon"></span>
+                        <span class="title">all items</span>
+                        <span class="counter">0</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="right-scroll">
+            @RenderBody()
+            <hr />
+            <footer>
+                <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            </footer>
+        </div>
     </div>
 
 </body>
