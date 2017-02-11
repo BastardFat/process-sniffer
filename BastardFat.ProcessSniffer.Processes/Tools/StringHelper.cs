@@ -19,5 +19,14 @@ namespace BastardFat.ProcessSniffer.Processes.Tools
                        Replace("\r", "\\r").
                        Replace("\t", "\\t");
         }
+
+        public static string GenerateRandomString()
+        {
+            byte[] bytes = new byte[18];
+            rand.NextBytes(bytes);
+            return Convert.ToBase64String(bytes);
+        }
+        private static Random rand = new Random((int) DateTime.Now.Ticks);
+
     }
 }

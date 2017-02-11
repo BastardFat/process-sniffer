@@ -52,6 +52,7 @@
   <ItemGroup>
     <Compile Include="Core\ProcessListTests.cs" />
     <Compile Include="Core\ProcessListUpdateWrapperTests.cs" />
+    <Compile Include="ProcessManagerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
